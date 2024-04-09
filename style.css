@@ -54,6 +54,7 @@ button{
   cursor: pointer;
   text-transform: uppercase;
   font-weight:600;
+  font-size: 1rem;
   margin-bottom: 50px;
 }
 

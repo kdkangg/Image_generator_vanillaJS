@@ -22,20 +22,26 @@ async function query(data) {
 	return result;
 }
 
-app.post('/dream', async (req, res) => {
-    const prompt = req.body.prompt;
+app.post('/generator', async (req, res) => {
+    try {
+		const prompt = req.body.prompt;
 
-	const response = await query({"inputs": prompt});
-   
-    // Convert the Blob to a Buffer
-    const buffer = await response.arrayBuffer();
-    const data = Buffer.from(buffer);
+		const response = await query({"inputs": prompt});
+	
+		// Convert the Blob to a Buffer
+		const buffer = await response.arrayBuffer();
+		const data = Buffer.from(buffer);
 
-    // Set the correct content-type
-    res.setHeader('Content-Type', 'image/jpeg');
+		// Set the correct content-type
+		res.setHeader('Content-Type', 'image/jpeg');
 
-    // Send the image data
-    res.send(data);
+		// Send the image data
+		res.send(data);
+	} catch (error) {
+		console.error(error);
+		res.status(500).send(error?.response.data.error.message || 'Something went wrong');
+	}
 });
-app.listen(8080, () => console.log('Server running on port 8080, http://localhost:8080/dream'));
+
+app.listen(8080, () => console.log('Server running on port 8080, http://localhost:8080/generator'));
 
