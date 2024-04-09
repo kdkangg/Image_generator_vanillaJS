@@ -32,10 +32,10 @@ app.post('/dream', async (req, res) => {
     const data = Buffer.from(buffer);
 
     // Set the correct content-type
-    res.setHeader('Content-Type', 'image/jpeg'); // Change 'image/jpeg' to the correct MIME type of your image
+    res.setHeader('Content-Type', 'image/jpeg');
 
     // Send the image data
     res.send(data);
 });
-app.listen(8080, () => console.log('Server running on port 8080'));
+app.listen(8080, () => console.log('Server running on port 8080, http://localhost:8080/dream'));
 

@@ -7,7 +7,19 @@
     <title>Vite App</title>
   </head>
   <body>
-    <div id="app"></div>
+    <main>
+      <h1>GenCV</h1>
+      <div id="result">
+        Generated image will appear here
+      </div>
+      <form>
+        <label for="prompt">Prompt</label>
+        <textarea id="prompt" name="prompt" rows="4" cols="50" required></textarea>
+        
+        <button type="submit">Generate</button>
+      </form>
+    </main>
+    
     <script type="module" src="/main.js"></script>
   </body>
 </html>
