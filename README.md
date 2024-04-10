@@ -1,2 +1,2 @@
 # GenImage_simple
-Simple GenCV application using vanila JS
+Simple AI application(Image generation) using vanila JS, Huggingface API
