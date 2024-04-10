@@ -1,2 +1,2 @@
 # GenImage_simple
-Simple AI application(Image generation) using vanila JS, Huggingface API
+Simple AI application(Image generation) using vanilla JS, Huggingface API
